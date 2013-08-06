@@ -8,7 +8,7 @@ ko.bindingHandlers.Date = {
         var value = ko.utils.unwrapObservable(valueAccessor()),
             bindingsAccessor = allBindingsAccessor();
 
-        var format = bindingsAccessor.format || 'MM/DD/YYYY';
+        var format = bindingsAccessor.format || 'L';
 
         if (value != null && value != '') {
             $(element).html(moment(value).format(format));
