@@ -1,0 +1,31 @@
+<html>
+<head>
+	<title>Test Page</title>
+	<link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+	<link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.no-icons.min.css" rel="stylesheet">
+	<link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body>
+	<div class='container'>
+		<div>
+			<input type='text' data-bind='value: Description, valueUpdate: "afterkeydown"' />
+		</div>
+		<div class='clearfix' style='margin-bottom: 25px'></div>
+		<span data-bind="subtext: Description, maxLength: 35, attr: {'data-content': Description}"></span>
+	</div>
+<script type="text/javascript" src='http://code.jquery.com/jquery-2.0.3.min.js'></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script type="text/javascript" src='knockout-2.3.0.js'></script>
+<script type="text/javascript" src='knockout.subtext_extension.js'></script>
+<script type="text/javascript">
+	var viewmodel = new function() {
+			this.Description = ko.observable('Test');
+		};
+
+	$(function(){
+		ko.applyBindings(viewmodel);
+		$('span').popover({placement: 'bottom', trigger: 'hover'});
+	});
+</script>
+</body>
+</html>
