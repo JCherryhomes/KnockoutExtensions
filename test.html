@@ -11,7 +11,7 @@
 			<input type='text' data-bind='value: Description, valueUpdate: "afterkeydown"' />
 		</div>
 		<div class='clearfix' style='margin-bottom: 25px'></div>
-		<span data-bind="subtext: Description, maxLength: 35, attr: {'data-content': Description}"></span>
+		<span data-bind="subtext: Description, maxLength: 35, trigger: 'click', attr: {'data-content': Description}"></span>
 	</div>
 <script type="text/javascript" src='http://code.jquery.com/jquery-2.0.3.min.js'></script>
 <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
@@ -24,7 +24,6 @@
 
 	$(function(){
 		ko.applyBindings(viewmodel);
-		$('span').popover({placement: 'bottom', trigger: 'hover'});
 	});
 </script>
 </body>
